@@ -36,24 +36,3 @@ Nos dados anteriores, lançamentos com comprador/pagador ou já marcados como co
 4. Para restaurar, clique em **Importar** e selecione o JSON. A importação substitui as viagens atuais; backups antigos de lista única são aceitos como uma viagem.
 
 A gravação na pasta sincronizada requer o Google Drive para computador instalado e que você selecione uma pasta incluída na sincronização. A opção do Drive na web continua manual; o HTML não envia diretamente ao site do Drive.
-
-## Executar localmente
-
-Pode abrir `index.html` diretamente. Para servir pela rede local:
-
-```bash
-python3 -m http.server 4173 --bind 0.0.0.0
-```
-
-Depois acesse `http://localhost:4173`.
-
-## Publicar no GitHub Pages
-
-O app é estático e pode ser hospedado no GitHub Pages sem servidor ou segredo de API:
-
-1. Crie um repositório no GitHub.
-2. Envie `index.html`, `README.md` e `.nojekyll` para a raiz do repositório. Não envie arquivos JSON de backup.
-3. Abra **Settings → Pages**. Em **Build and deployment**, escolha **Deploy from a branch**, selecione a branch `main` e a pasta `/(root)`; salve.
-4. Aguarde a publicação e abra a URL indicada pelo GitHub, normalmente `https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/`.
-
-O HTTPS do GitHub Pages permite o seletor de pastas nos navegadores compatíveis. Os dados do app continuam no armazenamento local do navegador e não são enviados ao GitHub; cada dispositivo/navegador tem seus próprios dados, que podem ser transferidos pelo backup JSON. O link padrão do Drive abre o Meu Drive genérico; adicione uma pasta específica no app se quiser usar outro destino manual.
